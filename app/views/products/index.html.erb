@@ -1,0 +1,14 @@
+<%= "Select Currency Here" %>:  <%= select_tag "converter", options_for_select(currency_codes), :onchange => "changeCurrency(this.value)", :selected=>"", class: "input-sm"%>
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+<%= render partial: "products_list" %>
+
+<script type="">
+  function changeCurrency(type) {
+    $.ajax({
+        type: 'get',
+        url: 'products/change_curreny?type='+type
+    });
+  }
+</script>

@@ -1,0 +1,19 @@
+<%sel_currency = params["type"].blank? ? "EUR" : params["type"]%>
+<div id='products_div'>
+  <% @products.each do |product| %>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+         <h3 style="color: red"><%= product.name%></h3>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="well">
+          <p style="color: blue"><%= product.description%></p>
+          <h4 style="color: green"> Price: <%= product.price %> (<%= sel_currency%>)</h4>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>
+<br>
